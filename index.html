@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ahmed Anani | Front-End Developer Portfolio</title>
+  <meta name="description" content="Ahmed Anani – Front-End Developer & BIS Graduate from Egypt. Passionate about building interactive, responsive, and user-friendly web applications."/>
+  <meta name="keywords" content="Ahmed Anani, Front-End Developer, Web Developer, HTML, CSS, JavaScript, React, Tailwind CSS, Portfolio, BIS Graduate, Web Design, Egypt" />
+  <meta name="author" content="Ahmed Anani" />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#080C10" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Ahmed Anani | Front-End Developer" />
+  <meta property="og:description" content="Ahmed Anani – Front-End Developer & BIS Graduate from Egypt. Building interactive, user-friendly web applications." />
+  <meta property="og:image" content="images/+-.jpg.jpeg" />
+  <meta property="og:url" content="https://ahmed-anani.github.io/" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Ahmed Anani | Front-End Developer" />
+  <meta name="twitter:description" content="Ahmed Anani – Front-End Developer & BIS Graduate from Egypt. Building interactive, user-friendly web applications." />
+  <meta name="twitter:image" content="images/+-.jpg.jpeg" />
+
+  <!-- Structured Data (JSON-LD) for SEO -->
+  <script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "Person",
+    "name": "Ahmed Anani",
+    "jobTitle": "Front-End Developer",
+    "url": "https://ahmed-anani.github.io/",
+    "sameAs": [
+      "https://www.linkedin.com/in/ahmed-anani-b29674328",
+      "https://github.com/ahmed-anani"
+    ],
+    "alumniOf": "Higher Institute of Management, Computers and Information Systems",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Abu Kabir, Sharqia",
+      "addressCountry": "Egypt"
+    }
+  }
+  </script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,700;1,300&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet"/>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            display: ['Bebas Neue', 'sans-serif'],
+            body: ['DM Sans', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          },
+          colors: {
+            obsidian: '#080C10',
+            navy: '#0D1117',
+            panel: '#111827',
+            panelLight: '#1a2236',
+            cyan: '#00D4FF',
+            cyanDim: '#00A8CC',
+            electric: '#0FF',
+            gold: '#FFB800',
+            muted: '#8892A0',
+            faint: '#1E2A3A',
+          }
+        }
+      }
+    }
+  </script>
+
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body class="bg-obsidian text-white font-body overflow-x-hidden">
+
+  <!-- ========== LOADER ========== -->
+  <div id="loader">
+    <div class="loader-inner">
+      <div class="loader-logo">AA</div>
+      <div class="loader-bar"><div class="loader-fill"></div></div>
+      <div class="loader-text font-mono text-cyan text-sm tracking-widest mt-4">LOADING PORTFOLIO...</div>
+    </div>
+  </div>
+
+  <!-- ========== CUSTOM CURSOR ========== -->
+  <div id="cursor"></div>
+  <div id="cursor-trail"></div>
+
+  <!-- ========== NAVBAR ========== -->
+  <nav id="navbar" class="fixed top-0 left-0 w-full z-50 transition-all duration-500">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="#hero" class="font-display text-2xl text-white tracking-widest hover:text-cyan transition-colors">
+        AHMED<span class="text-cyan">.</span>
+      </a>
+      <ul class="hidden md:flex items-center gap-8 font-mono text-xs tracking-widest text-muted">
+        <li><a href="#about" class="nav-link hover:text-cyan transition-colors">ABOUT</a></li>
+        <li><a href="#skills" class="nav-link hover:text-cyan transition-colors">SKILLS</a></li>
+        <li><a href="#projects" class="nav-link hover:text-cyan transition-colors">PROJECTS</a></li>
+        <li><a href="#education" class="nav-link hover:text-cyan transition-colors">EDUCATION</a></li>
+        <li><a href="#services" class="nav-link hover:text-cyan transition-colors">SERVICES</a></li>
+        <li><a href="#contact" class="nav-link hover:text-cyan transition-colors">CONTACT</a></li>
+      </ul>
+      <button id="menu-btn" class="md:hidden text-cyan text-xl"><i class="fas fa-bars"></i></button>
+    </div>
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-navy/95 backdrop-blur-xl border-t border-faint">
+      <ul class="flex flex-col items-center gap-6 py-8 font-mono text-xs tracking-widest text-muted">
+        <li><a href="#about" class="mobile-link hover:text-cyan transition-colors">ABOUT</a></li>
+        <li><a href="#skills" class="mobile-link hover:text-cyan transition-colors">SKILLS</a></li>
+        <li><a href="#projects" class="mobile-link hover:text-cyan transition-colors">PROJECTS</a></li>
+        <li><a href="#education" class="mobile-link hover:text-cyan transition-colors">EDUCATION</a></li>
+        <li><a href="#services" class="mobile-link hover:text-cyan transition-colors">SERVICES</a></li>
+        <li><a href="#contact" class="mobile-link hover:text-cyan transition-colors">CONTACT</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ========== HERO SECTION ========== -->
+  <section id="hero" class="relative min-h-screen flex items-center overflow-hidden">
+    <!-- Canvas for particles -->
+    <canvas id="particle-canvas"></canvas>
+
+    <!-- Grid overlay -->
+    <div class="hero-grid-overlay"></div>
+
+    <!-- Glow orbs -->
+    <div class="glow-orb glow-orb-1"></div>
+    <div class="glow-orb glow-orb-2"></div>
+
+    <div class="relative z-10 max-w-7xl mx-auto px-6 pt-24 pb-12 w-full">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <!-- Eyebrow -->
+          <div class="flex items-center gap-3 mb-6 reveal-up">
+            <span class="w-8 h-px bg-cyan"></span>
+            <span class="font-mono text-cyan text-xs tracking-widest">FRONT-END DEVELOPER</span>
+          </div>
+
+          <!-- Main heading -->
+          <h1 class="font-display leading-none mb-4 reveal-up" style="animation-delay:.1s">
+            <span class="hero-name-line block">AHMED</span>
+            <span class="hero-name-line block text-cyan">ANANI</span>
+          </h1>
+
+          <!-- Typed subtitle -->
+          <div class="font-mono text-muted text-base mb-8 h-6 reveal-up" style="animation-delay:.2s">
+            <span id="typed-text"></span><span class="typed-cursor">|</span>
+          </div>
+
+          <!-- Bio -->
+          <p class="text-muted leading-relaxed max-w-lg mb-10 reveal-up" style="animation-delay:.3s">
+            Passionate about building interactive, user-friendly web experiences. 
+            BIS Graduate · Team Leader · UI/UX Enthusiast from Egypt.
+          </p>
+
+          <!-- CTAs -->
+          <div class="flex flex-wrap gap-4 mb-10 reveal-up" style="animation-delay:.4s">
+            <a href="#projects" class="btn-primary">
+              <span>VIEW PROJECTS</span>
+              <i class="fas fa-arrow-right ml-2 text-xs"></i>
+            </a>
+            <a href="Resume_Bis (1).pdf" download="Ahmed_Anani_CV.pdf" class="btn-secondary">
+              <i class="fas fa-download mr-2 text-xs"></i>
+              <span>DOWNLOAD CV</span>
+            </a>
+          </div>
+
+          <!-- Socials -->
+          <div class="flex items-center gap-5 reveal-up" style="animation-delay:.5s">
+            <a href="https://www.linkedin.com/in/ahmed-anani-b29674328" target="_blank" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://github.com/ahmed-anani" target="_blank" class="social-icon"><i class="fab fa-github"></i></a>
+            <a href="#contact" class="social-icon"><i class="fas fa-envelope"></i></a>
+          </div>
+        </div>
+
+        <!-- Hero right — avatar card -->
+        <div class="hidden lg:flex justify-center items-center reveal-up" style="animation-delay:.3s">
+          <div class="hero-card">
+            <div class="hero-avatar-wrap">
+              <div class="hero-avatar-inner overflow-hidden">
+                <img src="images/+-.jpg.jpeg" alt="Ahmed Anani" class="w-full h-full object-cover object-top" />
+              </div>
+            </div>
+            <div class="hero-card-badge">
+              <span class="w-2 h-2 rounded-full bg-green-400 animate-pulse inline-block mr-2"></span>
+              <span class="font-mono text-xs text-muted">Available for work</span>
+            </div>
+            <!-- Floating tags -->
+            <div class="float-tag float-tag-1 font-mono text-xs">HTML</div>
+            <div class="float-tag float-tag-2 font-mono text-xs">CSS</div>
+            <div class="float-tag float-tag-3 font-mono text-xs">JS</div>
+            <div class="float-tag float-tag-4 font-mono text-xs">Tailwind</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Scroll indicator -->
+      <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-40">
+        <span class="font-mono text-xs tracking-widest text-muted">SCROLL</span>
+        <div class="scroll-line"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== ABOUT SECTION ========== -->
+  <section id="about" class="py-32 relative">
+    <div class="section-label">02 / ABOUT</div>
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="section-header reveal-up">
+        <span class="section-eyebrow">WHO I AM</span>
+        <h2 class="section-title">About <span class="text-cyan">Me</span></h2>
+      </div>
+
+      <div class="grid lg:grid-cols-2 gap-16 items-center mt-16">
+        <!-- Text -->
+        <div class="reveal-left">
+          <p class="text-muted leading-relaxed mb-6 text-lg">
+            I'm a <span class="text-white font-medium">Front-End Developer</span> and fresh Business Information Systems graduate, passionate about crafting web interfaces that are both visually stunning and technically solid.
+          </p>
+          <p class="text-muted leading-relaxed mb-6">
+            My journey spans from designing clean UI layouts to integrating RESTful APIs. As a <span class="text-cyan font-medium">Team Leader</span> on my graduation project, I coordinated development using GitHub workflows and delivered a full-stack clinic booking system.
+          </p>
+          <p class="text-muted leading-relaxed mb-10">
+            I'm driven by continuous learning, a strong eye for design, and the belief that great software lives at the intersection of elegance and function.
+          </p>
+
+          <div class="flex flex-wrap gap-3">
+            <span class="skill-tag">Problem Solving</span>
+            <span class="skill-tag">Team Leadership</span>
+            <span class="skill-tag">UI/UX Design</span>
+            <span class="skill-tag">API Integration</span>
+            <span class="skill-tag">Continuous Learning</span>
+          </div>
+        </div>
+
+        <!-- Stats -->
+        <div class="reveal-right">
+          <div class="grid grid-cols-2 gap-4">
+            <div class="stat-card col-span-2">
+              <div class="stat-number" data-target="3">0</div>
+              <div class="stat-label">Projects Completed</div>
+              <div class="stat-bar"></div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-number" data-target="9">0</div>
+              <div class="stat-label">Technologies</div>
+              <div class="stat-bar"></div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-number" data-target="1">0</div>
+              <div class="stat-label">Team Projects</div>
+              <div class="stat-bar"></div>
+            </div>
+          </div>
+
+          <!-- Info list -->
+          <div class="mt-6 space-y-3">
+            <div class="info-row">
+              <span class="font-mono text-xs text-cyan">LOCATION</span>
+              <span class="text-muted text-sm">Sharqia, Egypt</span>
+            </div>
+            <div class="info-row">
+              <span class="font-mono text-xs text-cyan">DEGREE</span>
+              <span class="text-muted text-sm">B.Sc. Business Information Systems</span>
+            </div>
+            <div class="info-row">
+              <span class="font-mono text-xs text-cyan">STATUS</span>
+              <span class="text-sm text-green-400 font-mono">Available for hire</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SKILLS SECTION ========== -->
+  <section id="skills" class="py-32 relative bg-navy/40">
+    <div class="section-label">03 / SKILLS</div>
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="section-header reveal-up">
+        <span class="section-eyebrow">WHAT I KNOW</span>
+        <h2 class="section-title">Technical <span class="text-cyan">Skills</span></h2>
+      </div>
+
+      <!-- Skill bars -->
+      <div class="grid md:grid-cols-2 gap-8 mt-16">
+        <!-- Left column -->
+        <div class="space-y-6 reveal-left">
+          <div class="skill-bar-item">
+            <div class="flex justify-between mb-2">
+              <span class="font-mono text-sm text-white flex items-center gap-2"><i class="fab fa-html5 text-orange-400"></i> HTML</span>
+              <span class="font-mono text-xs text-cyan">90%</span>
+            </div>
+            <div class="skill-track"><div class="skill-fill" data-pct="90"></div></div>
+          </div>
+          <div class="skill-bar-item">
+            <div class="flex justify-between mb-2">
+              <span class="font-mono text-sm text-white flex items-center gap-2"><i class="fab fa-css3-alt text-blue-400"></i> CSS</span>
+              <span class="font-mono text-xs text-cyan">75%</span>
+            </div>
+            <div class="skill-track"><div class="skill-fill" data-pct="75"></div></div>
+          </div>
+          <div class="skill-bar-item">
+            <div class="flex justify-between mb-2">
+              <span class="font-mono text-sm text-white flex items-center gap-2"><i class="fab fa-js text-yellow-400"></i> JavaScript</span>
+              <span class="font-mono text-xs text-cyan">70%</span>
+            </div>
+            <div class="skill-track"><div class="skill-fill" data-pct="70"></div></div>
+          </div>
+          <div class="skill-bar-item">
+            <div class="flex justify-between mb-2">
+              <span class="font-mono text-sm text-white flex items-center gap-2"><i class="fas fa-wind text-cyan"></i> Tailwind CSS</span>
+              <span class="font-mono text-xs text-cyan">75%</span>
+            </div>
+            <div class="skill-track"><div class="skill-fill" data-pct="75"></div></div>
+          </div>
+          <div class="skill-bar-item">
+            <div class="flex justify-between mb-2">
+              <span class="font-mono text-sm text-white flex items-center gap-2"><i class="fab fa-bootstrap text-purple-400"></i> Bootstrap</span>
+              <span class="font-mono text-xs text-cyan">65%</span>
+            </div>
+            <div class="skill-track"><div class="skill-fill" data-pct="65"></div></div>
+          </div>
+        </div>
+
+        <!-- Right column -->
+        <div class="space-y-6 reveal-right">
+          <div class="skill-bar-item">
+            <div class="flex justify-between mb-2">
+              <span class="font-mono text-sm text-white flex items-center gap-2"><i class="fas fa-mobile-alt text-green-400"></i> Responsive Design</span>
+              <span class="font-mono text-xs text-cyan">80%</span>
+            </div>
+            <div class="skill-track"><div class="skill-fill" data-pct="80"></div></div>
+          </div>
+          <div class="skill-bar-item">
+            <div class="flex justify-between mb-2">
+              <span class="font-mono text-sm text-white flex items-center gap-2"><i class="fab fa-git-alt text-red-400"></i> Git & GitHub</span>
+              <span class="font-mono text-xs text-cyan">70%</span>
+            </div>
+            <div class="skill-track"><div class="skill-fill" data-pct="70"></div></div>
+          </div>
+          <div class="skill-bar-item">
+            <div class="flex justify-between mb-2">
+              <span class="font-mono text-sm text-white flex items-center gap-2"><i class="fas fa-plug text-pink-400"></i> API Integration</span>
+              <span class="font-mono text-xs text-cyan">65%</span>
+            </div>
+            <div class="skill-track"><div class="skill-fill" data-pct="65"></div></div>
+          </div>
+          <div class="skill-bar-item">
+            <div class="flex justify-between mb-2">
+              <span class="font-mono text-sm text-white flex items-center gap-2"><i class="fas fa-brain text-indigo-400"></i> Problem Solving</span>
+              <span class="font-mono text-xs text-cyan">80%</span>
+            </div>
+            <div class="skill-track"><div class="skill-fill" data-pct="80"></div></div>
+          </div>
+          <div class="skill-bar-item">
+            <div class="flex justify-between mb-2">
+              <span class="font-mono text-sm text-white flex items-center gap-2"><i class="fas fa-database text-teal-400"></i> SQL / Databases</span>
+              <span class="font-mono text-xs text-cyan">50%</span>
+            </div>
+            <div class="skill-track"><div class="skill-fill" data-pct="50"></div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tech icon grid -->
+      <div class="grid grid-cols-3 sm:grid-cols-5 gap-4 mt-16">
+        <div class="tech-badge reveal-up" style="animation-delay:.0s"><i class="fab fa-html5 text-orange-400 text-2xl"></i><span>HTML5</span></div>
+        <div class="tech-badge reveal-up" style="animation-delay:.05s"><i class="fab fa-css3-alt text-blue-400 text-2xl"></i><span>CSS3</span></div>
+        <div class="tech-badge reveal-up" style="animation-delay:.1s"><i class="fab fa-js text-yellow-400 text-2xl"></i><span>JavaScript</span></div>
+        <!-- <div class="tech-badge reveal-up" style="animation-delay:.15s"><i class="fab fa-node-js text-green-400 text-2xl"></i><span>Node.js</span></div> -->
+        <div class="tech-badge reveal-up" style="animation-delay:.2s"><i class="fab fa-git-alt text-red-400 text-2xl"></i><span>Git</span></div>
+        <div class="tech-badge reveal-up" style="animation-delay:.25s"><i class="fab fa-github text-white text-2xl"></i><span>GitHub</span></div>
+        <!-- <div class="tech-badge reveal-up" style="animation-delay:.3s"><i class="fas fa-database text-teal-400 text-2xl"></i><span>MongoDB</span></div> -->
+        <!-- <div class="tech-badge reveal-up" style="animation-delay:.35s"><i class="fas fa-server text-purple-400 text-2xl"></i><span>Express</span></div> -->
+        <div class="tech-badge reveal-up" style="animation-delay:.4s"><i class="fas fa-chart-bar text-gold text-2xl"></i><span>Power BI</span></div>
+        <div class="tech-badge reveal-up" style="animation-delay:.45s"><i class="fas fa-table text-green-300 text-2xl"></i><span>Excel</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== PROJECTS SECTION ========== -->
+  <section id="projects" class="py-32 relative">
+    <div class="section-label">04 / PROJECTS</div>
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="section-header reveal-up">
+        <span class="section-eyebrow">WHAT I BUILT</span>
+        <h2 class="section-title">Featured <span class="text-cyan">Projects</span></h2>
+      </div>
+
+      <!-- Filter buttons -->
+      <div class="flex flex-wrap gap-3 mt-8 mb-12 reveal-up">
+        <button class="filter-btn active" data-filter="all">ALL</button>
+        <button class="filter-btn" data-filter="web">WEB</button>
+        <button class="filter-btn" data-filter="desktop">DESKTOP</button>
+        <button class="filter-btn" data-filter="islamic">ISLAMIC</button>
+      </div>
+
+      <!-- Projects grid -->
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6" id="projects-grid">
+
+        <!-- Project 1 -->
+        <div class="project-card reveal-up" data-category="web" style="animation-delay:.0s">
+          <div class="project-img">
+            <div class="project-img-bg">
+              <img src="images/nova_med.png" alt="Electronic Tasbeeh" class="w-full h-full object-cover">
+            </div>
+            <div class="project-overlay">
+              <a href="https://github.com/Ahmed-Anani/novamed-frontEnd" class="project-link" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+              <a href=" https://ahmed-anani.github.io/novamed-frontEnd/" class="project-link" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+            </div>
+          </div>
+          <div class="project-body">
+            <div class="project-num font-mono text-xs text-cyan mb-2">01</div>
+            <h3 class="project-title">Medical Clinic Booking System</h3>
+            <p class="project-desc">Full-stack graduation project — online appointment booking, doctor dashboards, admin panel, secure auth, and analytics.</p>
+            <div class="project-tags">
+              <span>HTML</span><span>CSS</span><span>JavaScript</span><span>Node.js</span><span>MongoDB</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 2 -->
+        <!-- <div class="project-card reveal-up" data-category="web" style="animation-delay:.1s">
+          <div class="project-img">
+            <div class="project-img-bg" style="background: linear-gradient(135deg, #0D1117 0%, #162030 100%)">
+              <i class="fas fa-piggy-bank text-gold text-4xl"></i>
+            </div>
+            <div class="project-overlay">
+              <a href="#" class="project-link" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+              <a href="#" class="project-link" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+            </div>
+          </div>
+          <div class="project-body">
+            <div class="project-num font-mono text-xs text-cyan mb-2">02</div>
+            <h3 class="project-title">Smart Banking Expense Tracker</h3>
+            <p class="project-desc">AI-powered banking cash reconciliation and difference tracking system for financial accuracy.</p>
+            <div class="project-tags">
+              <span>Flask</span><span>Python</span><span>JavaScript</span>
+            </div>
+          </div>
+        </div> -->
+
+        <!-- Project 3 -->
+        <!-- <div class="project-card reveal-up" data-category="desktop" style="animation-delay:.2s">
+          <div class="project-img">
+            <div class="project-img-bg" style="background: linear-gradient(135deg, #0D1117 0%, #1a1630 100%)">
+              <i class="fas fa-language text-purple-400 text-4xl"></i>
+            </div>
+            <div class="project-overlay">
+              <a href="#" class="project-link" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+              <a href="#" class="project-link" target="_blank"><i class="fas fa-external-link-alt"></i> Demo</a>
+            </div>
+          </div>
+          <div class="project-body">
+            <div class="project-num font-mono text-xs text-cyan mb-2">03</div>
+            <h3 class="project-title">English Learning Application</h3>
+            <p class="project-desc">Desktop application for learning English interactively, built with Python's Tkinter GUI framework.</p>
+            <div class="project-tags">
+              <span>Python</span><span>Tkinter</span><span>Desktop</span>
+            </div>
+          </div>
+        </div> -->
+
+        <!-- Project 4 -->
+        <!-- <div class="project-card reveal-up" data-category="islamic" style="animation-delay:.3s">
+          <div class="project-img">
+            <div class="project-img-bg">
+              <img src="images/Screenshot 2026-05-23 183853.png" alt="Electronic Tasbeeh" class="w-full h-full object-cover">
+            </div>
+            <div class="project-overlay">
+              <a href="#" class="project-link" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+              <a href="#" class="project-link" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+            </div>
+          </div>
+          <div class="project-body">
+            <div class="project-num font-mono text-xs text-cyan mb-2">04</div>
+            <h3 class="project-title">Islamic Website</h3>
+            <p class="project-desc">Beautiful Quran and Azkar web platform with clean design for reading and spiritual engagement.</p>
+            <div class="project-tags">
+              <span>HTML</span><span>CSS</span><span>JavaScript</span>
+            </div>
+          </div>
+        </div> -->
+
+        <!-- Project 5 -->
+        <div class="project-card reveal-up" data-category="islamic" style="animation-delay:.4s">
+          <div class="project-img">
+            <div class="project-img-bg">
+              <img src="images/project5.png" alt="Electronic Tasbeeh" class="w-full h-full object-cover">
+            </div>
+            <div class="project-overlay">
+              <a href="https://github.com/Ahmed-Anani/Electronic-rosary" class="project-link" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+              <a href="https://ahmed-anani.github.io/Electronic-rosary/" class="project-link" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+            </div>
+          </div>
+          <div class="project-body">
+            <div class="project-num font-mono text-xs text-cyan mb-2">02</div>
+            <h3 class="project-title">Electronic Tasbeeh</h3>
+            <p class="project-desc">Interactive Azkar and Tasbeeh digital counter application with animated UI and sound effects.</p>
+            <div class="project-tags">
+              <span>HTML</span><span>CSS</span><span>JavaScript</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 6 -->
+        <div class="project-card reveal-up" data-category="web" style="animation-delay:.5s">
+          <div class="project-img">
+            <div class="project-img-bg">
+              <img src="images/Screenshot 2026-05-23 183853.png" alt="Electronic Tasbeeh" class="w-full h-full object-cover">
+            </div>
+            <div class="project-overlay">
+              <a href="https://github.com/Ahmed-Anani/PharmaTrack-System" class="project-link" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+              <a href="https://ahmed-anani.github.io/PharmaTrack-System/" class="project-link" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+            </div>
+          </div>
+          <div class="project-body">
+            <div class="project-num font-mono text-xs text-cyan mb-2">03</div>
+            <h3 class="project-title">PharmaTrack System</h3>
+            <p class="project-desc">A fully responsive pharmacy management system featuring inventory tracking, sales processing, authentication, and dynamic dashboard reports.</p>
+            <div class="project-tags">
+              <span>HTML</span><span>CSS</span><span>JavaScript</span><span>DOM</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== EDUCATION SECTION ========== -->
+  <section id="education" class="py-32 relative bg-navy/40">
+    <div class="section-label">05 / EDUCATION</div>
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="section-header reveal-up">
+        <span class="section-eyebrow">MY BACKGROUND</span>
+        <h2 class="section-title">Education &amp; <span class="text-cyan">Journey</span></h2>
+      </div>
+
+      <div class="relative mt-16 max-w-3xl mx-auto">
+        <!-- Timeline line -->
+        <div class="timeline-line"></div>
+
+        <!-- Item 1 -->
+        <div class="timeline-item reveal-left">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <div class="flex items-center justify-between flex-wrap gap-2 mb-3">
+              <span class="font-mono text-xs text-cyan tracking-widest">2022 — 2026</span>
+              <span class="timeline-badge">Very Good</span>
+            </div>
+            <h3 class="text-white font-medium text-lg mb-1">B.Sc. Business Information Systems</h3>
+            <p class="text-muted text-sm mb-4">Higher Institute of Management, Computers and Information Systems (Al Obour)</p>
+            <ul class="space-y-2 text-muted text-sm">
+              <li class="flex items-start gap-2"><i class="fas fa-check-circle text-cyan text-xs mt-1"></i> Front-End Development focus</li>
+              <li class="flex items-start gap-2"><i class="fas fa-check-circle text-cyan text-xs mt-1"></i> System Analysis & Design</li>
+              <li class="flex items-start gap-2"><i class="fas fa-check-circle text-cyan text-xs mt-1"></i> Database Systems & SQL</li>
+              <li class="flex items-start gap-2"><i class="fas fa-check-circle text-cyan text-xs mt-1"></i> Graduation Project Team Leader</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Item 2 -->
+        <div class="timeline-item reveal-right">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <div class="flex items-center justify-between flex-wrap gap-2 mb-3">
+              <span class="font-mono text-xs text-cyan tracking-widest">2025 — 2026</span>
+              <span class="timeline-badge">Graduation Project</span>
+            </div>
+            <h3 class="text-white font-medium text-lg mb-1">Team Leader — Clinic Booking System</h3>
+            <p class="text-muted text-sm mb-4">Full-Stack Web Application Development</p>
+            <ul class="space-y-2 text-muted text-sm">
+              <li class="flex items-start gap-2"><i class="fas fa-check-circle text-cyan text-xs mt-1"></i> Led team via GitHub collaboration</li>
+              <li class="flex items-start gap-2"><i class="fas fa-check-circle text-cyan text-xs mt-1"></i> UI design & front-end implementation</li>
+              <li class="flex items-start gap-2"><i class="fas fa-check-circle text-cyan text-xs mt-1"></i> API integration & system analysis</li>
+              <li class="flex items-start gap-2"><i class="fas fa-check-circle text-cyan text-xs mt-1"></i> Node.js · MongoDB · Express · JWT</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SERVICES SECTION ========== -->
+  <section id="services" class="py-32 relative">
+    <div class="section-label">06 / SERVICES</div>
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="section-header reveal-up">
+        <span class="section-eyebrow">WHAT I OFFER</span>
+        <h2 class="section-title">My <span class="text-cyan">Services</span></h2>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-16">
+        <div class="service-card reveal-up" style="animation-delay:.0s">
+          <div class="service-icon"><i class="fas fa-code"></i></div>
+          <h3 class="service-title">Front-End Development</h3>
+          <p class="service-desc">Building responsive, high-performance websites using HTML, CSS, JavaScript, and Tailwind CSS.</p>
+        </div>
+        <div class="service-card reveal-up" style="animation-delay:.1s">
+          <div class="service-icon"><i class="fas fa-mobile-screen-button"></i></div>
+          <h3 class="service-title">Responsive Design</h3>
+          <p class="service-desc">Pixel-perfect layouts that look great on any device — mobile, tablet, or desktop.</p>
+        </div>
+        <div class="service-card reveal-up" style="animation-delay:.2s">
+          <div class="service-icon"><i class="fas fa-palette"></i></div>
+          <h3 class="service-title">UI Design</h3>
+          <p class="service-desc">Crafting clean, modern, user-friendly interfaces with attention to hierarchy and aesthetics.</p>
+        </div>
+        <div class="service-card reveal-up" style="animation-delay:.3s">
+          <div class="service-icon"><i class="fas fa-gauge-high"></i></div>
+          <h3 class="service-title">Website Optimization</h3>
+          <p class="service-desc">Improving load speed, SEO structure, and performance for better user experience.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CONTACT SECTION ========== -->
+  <section id="contact" class="py-32 relative bg-navy/40">
+    <div class="section-label">07 / CONTACT</div>
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="section-header reveal-up">
+        <span class="section-eyebrow">GET IN TOUCH</span>
+        <h2 class="section-title">Let's <span class="text-cyan">Connect</span></h2>
+      </div>
+
+      <div class="grid lg:grid-cols-2 gap-16 mt-16">
+        <!-- Contact info -->
+        <div class="reveal-left">
+          <p class="text-muted leading-relaxed mb-10 text-lg">
+            I'm open to Junior Front-End and Full Stack Developer opportunities. Whether you have a project, a question, or just want to say hi — my inbox is always open.
+          </p>
+
+          <div class="space-y-5">
+            <a href="#" onclick="copyEmail(event, 'anany3872@gmail.com')" class="contact-info-row">
+              <div class="contact-info-icon"><i class="fas fa-envelope"></i></div>
+              <div>
+                <div class="font-mono text-xs text-cyan mb-1">EMAIL</div>
+                <div class="text-white text-sm" id="email-text">anany3872@gmail.com</div>
+              </div>
+            </a>
+            <a href="https://www.linkedin.com/in/ahmed-anani-b29674328" target="_blank" class="contact-info-row">
+              <div class="contact-info-icon"><i class="fab fa-linkedin-in"></i></div>
+              <div>
+                <div class="font-mono text-xs text-cyan mb-1">LINKEDIN</div>
+                <div class="text-white text-sm">linkedin.com/in/ahmed-anani-b29674328</div>
+              </div>
+            </a>
+            <a href="https://github.com/ahmed-anani" target="_blank" class="contact-info-row">
+              <div class="contact-info-icon"><i class="fab fa-github"></i></div>
+              <div>
+                <div class="font-mono text-xs text-cyan mb-1">GITHUB</div>
+                <div class="text-white text-sm">github.com/ahmed-anani</div>
+              </div>
+            </a>
+            <a href="tel:+2001019514831" class="contact-info-row">
+              <div class="contact-info-icon"><i class="fas fa-phone"></i></div>
+              <div>
+                <div class="font-mono text-xs text-cyan mb-1">PHONE</div>
+                <div class="text-white text-sm">+20 01019514831</div>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <!-- Contact form -->
+        <div class="reveal-right">
+          <form class="contact-form-card" id="contactForm" onsubmit="sendMessage(event)">
+            <div class="form-group">
+              <label class="form-label">YOUR NAME</label>
+              <input type="text" name="name" placeholder="Ahmed Mohamed" class="form-input" required />
+            </div>
+            <div class="form-group">
+              <label class="form-label">EMAIL ADDRESS</label>
+              <input type="email" name="email" placeholder="hello@example.com" class="form-input" required />
+            </div>
+            <div class="form-group">
+              <label class="form-label">SUBJECT</label>
+              <input type="text" name="subject" placeholder="Let's work together" class="form-input" required />
+            </div>
+            <div class="form-group">
+              <label class="form-label">MESSAGE</label>
+              <textarea name="message" rows="5" placeholder="Tell me about your project..." class="form-input form-textarea" required></textarea>
+            </div>
+            <button type="submit" id="send-btn" class="btn-primary w-full justify-center mt-2">
+              <i class="fas fa-paper-plane mr-2 text-xs"></i>
+              <span>SEND MESSAGE</span>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="border-t border-faint py-12">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+        <div>
+          <span class="font-display text-2xl text-white tracking-widest">AHMED<span class="text-cyan">.</span></span>
+          <p class="text-muted text-sm mt-1">Front-End Developer · BIS Graduate · Egypt</p>
+        </div>
+        <div class="flex items-center gap-5">
+          <a href="https://www.linkedin.com/in/ahmed-anani-b29674328" target="_blank" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://github.com/ahmed-anani" target="_blank" class="social-icon"><i class="fab fa-github"></i></a>
+          <a href="#contact" class="social-icon"><i class="fas fa-envelope"></i></a>
+        </div>
+      </div>
+      <div class="border-t border-faint mt-8 pt-6 flex flex-col md:flex-row items-center justify-between gap-4">
+        <p class="text-muted text-xs font-mono">© 2025 Ahmed Anani. All rights reserved.</p>
+        <p class="text-muted text-xs font-mono">Built with HTML · CSS · JavaScript · Tailwind</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll to top -->
+  <button id="scroll-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Scroll to top">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <script src="script.js"></script>
+</body>
+</html>
