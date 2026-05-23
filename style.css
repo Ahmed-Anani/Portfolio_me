@@ -840,3 +840,9 @@ body:has(a:hover, button:hover) #cursor {
 ::-webkit-scrollbar-thumb:hover { background: var(--cyan); }
 
 ::selection { background: rgba(0,212,255,.2); color: var(--white); }
+
+@media (max-width: 768px) {
+  body {
+    overflow: hidden;
+  }
+}
