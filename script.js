@@ -10,7 +10,8 @@ window.addEventListener('load', () => {
     const loader = document.getElementById('loader');
     if (loader) {
       loader.classList.add('hidden');
-      document.body.style.overflow = 'visible';
+      document.body.style.overflowY = 'auto';
+      document.body.style.overflowX = 'hidden';
       // Trigger hero animations after loader
       document.querySelectorAll('#hero .reveal-up, #hero .reveal-left, #hero .reveal-right')
         .forEach(el => el.classList.add('visible'));

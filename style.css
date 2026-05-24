@@ -18,7 +18,11 @@
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
-html { scroll-behavior: smooth; }
+html { 
+  scroll-behavior: smooth; 
+  overflow-x: hidden;
+  width: 100%;
+}
 
 body {
   background-color: var(--obsidian);
@@ -26,6 +30,8 @@ body {
   font-family: 'DM Sans', sans-serif;
   cursor: none;
   overflow-x: hidden;
+  width: 100%;
+  position: relative;
 }
 
 /* =============================================
@@ -842,7 +848,7 @@ body:has(a:hover, button:hover) #cursor {
 ::selection { background: rgba(0,212,255,.2); color: var(--white); }
 
 @media (max-width: 768px) {
-  body {
-    overflow: hidden;
+  html, body {
+    overflow-x: hidden;
   }
 }
